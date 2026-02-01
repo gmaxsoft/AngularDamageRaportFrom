@@ -1,11 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormSzkoda } from './form-szkoda/form-szkoda';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormSzkoda],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('szkoda-pojazd');
-}
+export class App {}

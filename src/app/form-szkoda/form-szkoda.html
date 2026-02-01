@@ -1,0 +1,180 @@
+<div class="mx-auto max-w-lg p-4 md:p-6">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
+    <!-- Dane właściciela -->
+    <section class="flex flex-col">
+      <h2 class="text-xl font-bold mb-4">Dane właściciela</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex flex-col">
+          <label for="imie" class="mb-1 text-sm font-medium">Imię</label>
+          <input
+            id="imie"
+            type="text"
+            formControlName="imie"
+            class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          @if (imie?.invalid && imie?.touched) {
+            <span class="text-red-500 text-sm">Imię jest wymagane.</span>
+          }
+        </div>
+        <div class="flex flex-col">
+          <label for="nazwisko" class="mb-1 text-sm font-medium">Nazwisko</label>
+          <input
+            id="nazwisko"
+            type="text"
+            formControlName="nazwisko"
+            class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          @if (nazwisko?.invalid && nazwisko?.touched) {
+            <span class="text-red-500 text-sm">Nazwisko jest wymagane.</span>
+          }
+        </div>
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="email" class="mb-1 text-sm font-medium">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+        @if (email?.invalid && email?.touched) {
+          <span class="text-red-500 text-sm">
+            @if (email?.errors?.['required']) {
+              Email jest wymagany.
+            } @else if (email?.errors?.['email']) {
+              Podaj prawidłowy adres email.
+            }
+          </span>
+        }
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="telefon" class="mb-1 text-sm font-medium">Telefon</label>
+        <input
+          id="telefon"
+          type="tel"
+          formControlName="telefon"
+          class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+        @if (telefon?.invalid && telefon?.touched) {
+          <span class="text-red-500 text-sm">Telefon jest wymagany.</span>
+        }
+      </div>
+    </section>
+
+    <!-- Dane pojazdu -->
+    <section class="flex flex-col">
+      <h2 class="text-xl font-bold mb-4">Dane pojazdu</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex flex-col">
+          <label for="marka" class="mb-1 text-sm font-medium">Marka</label>
+          <input
+            id="marka"
+            type="text"
+            formControlName="marka"
+            class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          @if (marka?.invalid && marka?.touched) {
+            <span class="text-red-500 text-sm">Marka jest wymagana.</span>
+          }
+        </div>
+        <div class="flex flex-col">
+          <label for="model" class="mb-1 text-sm font-medium">Model</label>
+          <input
+            id="model"
+            type="text"
+            formControlName="model"
+            class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          @if (model?.invalid && model?.touched) {
+            <span class="text-red-500 text-sm">Model jest wymagany.</span>
+          }
+        </div>
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="rejestracja" class="mb-1 text-sm font-medium">Numer rejestracyjny</label>
+        <input
+          id="rejestracja"
+          type="text"
+          formControlName="rejestracja"
+          class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+        @if (rejestracja?.invalid && rejestracja?.touched) {
+          <span class="text-red-500 text-sm">Numer rejestracyjny jest wymagany.</span>
+        }
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="vin" class="mb-1 text-sm font-medium">VIN (17 znaków)</label>
+        <input
+          id="vin"
+          type="text"
+          formControlName="vin"
+          maxlength="17"
+          class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+        @if (vin?.invalid && vin?.touched) {
+          <span class="text-red-500 text-sm">
+            @if (vin?.errors?.['required']) {
+              VIN jest wymagany.
+            } @else if (vin?.errors?.['minlength']) {
+              VIN musi mieć 17 znaków.
+            }
+          </span>
+        }
+      </div>
+    </section>
+
+    <!-- Opis szkody -->
+    <section class="flex flex-col">
+      <h2 class="text-xl font-bold mb-4">Opis szkody</h2>
+      <div class="flex flex-col">
+        <label for="dataZdarzenia" class="mb-1 text-sm font-medium">Data zdarzenia</label>
+        <input
+          id="dataZdarzenia"
+          type="date"
+          formControlName="dataZdarzenia"
+          class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+        @if (dataZdarzenia?.invalid && dataZdarzenia?.touched) {
+          <span class="text-red-500 text-sm">Data zdarzenia jest wymagana.</span>
+        }
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="opis" class="mb-1 text-sm font-medium">Opis (min. 50 znaków)</label>
+        <textarea
+          id="opis"
+          formControlName="opis"
+          rows="4"
+          class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        ></textarea>
+        @if (opis?.invalid && opis?.touched) {
+          <span class="text-red-500 text-sm">
+            @if (opis?.errors?.['required']) {
+              Opis jest wymagany.
+            } @else if (opis?.errors?.['minlength']) {
+              Opis musi mieć co najmniej 50 znaków.
+            }
+          </span>
+        }
+      </div>
+      <div class="flex flex-col mt-2">
+        <label for="zalaczniki" class="mb-1 text-sm font-medium">Załączniki (zdjęcia)</label>
+        <input
+          id="zalaczniki"
+          type="file"
+          multiple
+          accept="image/*"
+          (change)="onFileChange($event)"
+          class="border border-gray-300 rounded p-2 mb-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+    </section>
+
+    <button
+      type="submit"
+      [disabled]="form.invalid"
+      class="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium py-2 px-4 rounded mt-4 transition-colors"
+    >
+      Wyślij zgłoszenie
+    </button>
+  </form>
+</div>
