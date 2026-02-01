@@ -1,84 +1,55 @@
-# Szkoda Pojazd – formularz zgłoszenia szkody
+# damage_report_form
 
-Aplikacja Angular 21 z reaktywnym formularzem zgłoszenia szkody na pojeździe. Stylizacja Tailwind CSS, standalone components, Reactive Forms, testy Vitest, CI w GitHub Actions.
+Projekt "damage_report_form" to prosta aplikacja Angular służąca do wypełniania formularza zgłoszenia szkody.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+## Opis
 
-## Development server
+Minimalna aplikacja frontendowa pokazująca formularz zgłoszeniowy (pliki źródłowe w folderze `src/app/form-szkoda`).
 
-To start a local development server, run:
+## Wymagania
 
-```bash
-ng serve
-```
+- Node.js (>=14)
+- npm (>=6)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Technologie
 
-## Code scaffolding
+- Angular (wersja zgodna z `angular.json`)
+- TypeScript
+- HTML / CSS
+- npm (zarządzanie pakietami)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalacja
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Zainstaluj zależności:
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
-
-To build the project run:
+2. Uruchom aplikację deweloperską:
 
 ```bash
-ng build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+3. Uruchom testy:
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
+## Struktura projektu
 
-For end-to-end (e2e) testing, run:
+- `angular.json` — konfiguracja projektu Angular
+- `src/` — kod źródłowy aplikacji
+  - `app/` — główne pliki aplikacji
+    - `form-szkoda/` — komponent formularza szkody
 
-```bash
-ng e2e
-```
+## Dalsze kroki
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Dodaj szczegółowy opis API/backendu jeśli będzie potrzebny.
+- Uzupełnij dokumentację komponentów i testy jednostkowe.
 
-## Git – unikanie Co-authored-by
+## Licencja
 
-Aby commity nie zawierały traileru „Co-authored-by”, ustaw w repozytorium:
-
-```bash
-git config user.name "Twoje Imię"
-git config user.email "twoj@email.com"
-```
-
-Dla pojedynczego commita możesz użyć:
-
-```bash
-GIT_AUTHOR_NAME="..." GIT_COMMITTER_NAME="..." GIT_AUTHOR_EMAIL="..." GIT_COMMITTER_EMAIL="..." git commit -m "..."
-```
-
-## Deploy (np. GitHub Pages)
-
-1. Zbuduj projekt: `npm run build`
-2. Wynik w `dist/szkoda-pojazd/browser/` (lub `dist/szkoda-pojazd/` w zależności od wersji Angular).
-3. W repozytorium GitHub: **Settings → Pages → Source**: wybierz branch (np. `main`) i folder `/(root)` lub użyj GitHub Actions do deployu na Pages (np. `peaceiris/actions-gh-pages`).
-
-Workflow CI (`.github/workflows/ci.yml`) uruchamia się przy push/pull_request do `main` i `master`: `npm ci`, `ng build`, `ng test --no-watch`.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Plik licencji nie został dołączony — dodaj według potrzeb.
