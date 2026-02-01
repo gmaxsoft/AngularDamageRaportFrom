@@ -1,6 +1,6 @@
 {
   "name": "szkoda-pojazd",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,6 +21,8 @@
     ]
   },
   "private": true,
+  "author": "maxsoft",
+  "license": "MIT",
   "packageManager": "npm@11.8.0",
   "dependencies": {
     "@angular/common": "^21.1.0",

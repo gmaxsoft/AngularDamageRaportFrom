@@ -1,4 +1,4 @@
-# damage_report_form
+# Formularza zgłoszenia szkody
 
 Projekt "damage_report_form" to prosta aplikacja Angular służąca do wypełniania formularza zgłoszenia szkody.
 
@@ -50,6 +50,14 @@ npm test
 - Dodaj szczegółowy opis API/backendu jeśli będzie potrzebny.
 - Uzupełnij dokumentację komponentów i testy jednostkowe.
 
+## Autor
+
+- maxsoft
+
+## Wersja
+
+- 1.0.0
+
 ## Licencja
 
-Plik licencji nie został dołączony — dodaj według potrzeb.
+- MIT — zobacz plik [LICENSE](LICENSE) w repozytorium.
